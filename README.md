@@ -2,6 +2,8 @@
 
 An idiomatic clojure wrapper to the Jena ontology management library. 
 
+### Cloned by Mark Watson 10/10/2020. Thanks to the original author, and thanks for changing the license to LGPL!
+
 ## Install
 
 ### Leiningen / Boot:
@@ -33,16 +35,23 @@ Some usage examples:
 ``` clj
 (require '[jena-clj.triplestore :as ts])
 (import '[org.apache.jena.query ReadWrite])
-(defonce db (ts/init-database "path/to/triplestore") ; If it doesn't exist, it creates one
+(defonce db (ts/init-database "data.db") ; If it doesn't exist, it creates one
 
-(with-transaction db ReadWrite/WRITE
-  (ts/insert-rdf db "path/to/rdf/or/ttl/file")) ; Loads a whole RDF file into triplestore
+(ts/with-transaction db ReadWrite/WRITE
+  (ts/insert-rdf db "sample_news.n3")) ; Loads a whole RDF file into triplestore
   
-(with-transaction db ReadWrite/READ
-  (ts/select-query 
+(ts/with-transaction db ReadWrite/READ
+  (ts/select-query db
     "prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
      SELECT ?uri ?name
      WHERE {?uri rdf:name ?name}")) ; Returns a lazy sequence with all results.
+
+  
+(ts/with-transaction db ReadWrite/READ
+  (ts/select-query db
+    "SELECT ?s ?p ?o
+     WHERE {?s ?p ?o} LIMIT 10")) ; Returns a lazy sequence with all results.
+
 ```
 Take a look at triplestore.clj source for more!
 
@@ -55,5 +64,5 @@ Take a look at triplestore.clj source for more!
 
 Copyright © 2017 setzer22
 
-Distributed under the GNU General Public License v3.0
+Distributed under the GNU Lesser General Public License v3.0
 
