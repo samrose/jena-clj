@@ -10,4 +10,8 @@ pom.xml.asc
 .hgignore
 .hg/
 data.db
-
+target
+.idea/
+jena-clj.iml
+repos.dat/
+	

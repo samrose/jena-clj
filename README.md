@@ -35,7 +35,7 @@ Some usage examples:
 ``` clj
 (require '[jena-clj.triplestore :as ts])
 (import '[org.apache.jena.query ReadWrite])
-(defonce db (ts/init-database "data.db") ; If it doesn't exist, it creates one
+(defonce db (ts/init-database "data.db")) ; If it doesn't exist, it creates one
 
 (ts/with-transaction db ReadWrite/WRITE
   (ts/insert-rdf db "sample_news.n3")) ; Loads a whole RDF file into triplestore
