@@ -4,6 +4,12 @@ An idiomatic clojure wrapper to the Jena ontology management library.
 
 ### Cloned by Mark Watson 10/10/2020. Thanks to the original author, and thanks for changing the license to LGPL!
 
+## Mark Watson's notes for project fork:
+
+- added remote SPARQL query (with test against DBPedia SPARQL endpoint)
+- minor changes to original triplestore code, updating library versions
+- added a concrete example for triplestore code
+
 ## Install
 
 ### Leiningen / Boot:
@@ -35,6 +41,14 @@ Some usage examples:
 ``` clj
 (require '[jena-clj.triplestore :as ts])
 (import '[org.apache.jena.query ReadWrite])
+
+(require '[jena-clj.remote-query :as rq])
+
+(let [r (rq/query-remote "https://dbpedia.org/sparql"
+                        "select ?p ?o where { <http://dbpedia.org/resource/Bill_Gates> ?p ?o . } limit 12")]
+    (println "\nresults:\n")
+    (pprint r))
+
 (defonce db (ts/init-database "data.db")) ; If it doesn't exist, it creates one
 
 (ts/with-transaction db ReadWrite/WRITE

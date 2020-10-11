@@ -14,4 +14,5 @@ target
 .idea/
 jena-clj.iml
 repos.dat/
+.DS_Store
 	
