@@ -77,6 +77,7 @@ Take a look at triplestore.clj source for more!
 ## License
 
 Copyright © 2017 setzer22
+Copyright © 2017 Mark Watson (https://markwatson.com)
 
 Distributed under the GNU Lesser General Public License v3.0
 
