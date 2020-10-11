@@ -10,6 +10,26 @@ An idiomatic clojure wrapper to the Jena ontology management library.
 - minor changes to original triplestore code, updating library versions
 - added a concrete example for triplestore code
 
+To install this library locally on your laptop or server (binaries in ~/.m2) run:
+
+    lein install
+
+You can use the locally installed library by adding this to your project.clj file for :dependencies:
+
+    [jena-clj "0.2.1"]
+
+And to try it out:
+
+```clj
+(require '[jena-clj.remote-query :as rq])
+
+;; ...
+  (let [r (rq/query-remote "https://dbpedia.org/sparql"
+                               "select ?p ?o where { <http://dbpedia.org/resource/Bill_Gates> ?p ?o . } limit 12")]
+        (println "\nresults:\n")
+        (println r))
+```
+
 ## Install
 
 ### Leiningen / Boot:

@@ -1,4 +1,4 @@
-(defproject jena-clj "0.2.0-SNAPSHOT"
+(defproject jena-clj "0.2.1"
   :description "An idiomatic Clojure wrapper to the Jena API: fork from setzer22"
   :url "https://github.com/mark-watson/jena-clj"
   :repositories {"mvnrepository" {:url "https://mvnrepository.com/"}
