@@ -4,13 +4,19 @@ An idiomatic clojure wrapper to the Jena ontology management library.
 
 ### Cloned by Mark Watson 10/10/2020. Thanks to the original author, and thanks for changing the license to LGPL!
 
+Original author is github user setzer22. Original README is in the file README_setzer22_original.md
+
+see original: https://github.com/setzer22/jena-clj
+
 ## Mark Watson's notes for project fork:
 
 - added remote SPARQL query (with test against DBPedia SPARQL endpoint)
 - minor changes to original triplestore code, updating library versions
 - added a concrete example for triplestore code
+- removed old documentatio for using build tools other than lein
+- docs for using as a locally installed library 
 
-To install this library locally on your laptop or server (binaries in ~/.m2) run:
+### To install this library locally on your laptop or server (binaries in ~/.m2) run:
 
     lein install
 
@@ -29,30 +35,6 @@ And to try it out:
         (println "\nresults:\n")
         (println r))
 ```
-
-## Install
-
-### Leiningen / Boot:
-
-```clj
-[jena-clj "0.1.0"]
-```
-
-### Gradle 
-
-``` gradle
-compile "jena-clj:jena-clj:0.1.0"
-```
-
-### Maven
-``` xml
-<dependency>
-  <groupId>jena-clj</groupId>
-  <artifactId>jena-clj</artifactId>
-  <version>0.1.0</version>
-</dependency>
-```
-
 
 ## Usage
 
@@ -96,7 +78,7 @@ Take a look at triplestore.clj source for more!
 
 ## License
 
-Copyright © 2017 setzer22
+Copyright © 2017 setzer22 (original author)
 
 Copyright © 2017 Mark Watson (https://markwatson.com)
 
