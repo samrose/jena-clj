@@ -25,7 +25,7 @@ And to try it out:
 
 ;; ...
   (let [r (rq/query-remote "https://dbpedia.org/sparql"
-                               "select ?p ?o where { <http://dbpedia.org/resource/Bill_Gates> ?p ?o . } limit 12")]
+                           "select ?p ?o where { <http://dbpedia.org/resource/Bill_Gates> ?p ?o . } limit 12")]
         (println "\nresults:\n")
         (println r))
 ```
