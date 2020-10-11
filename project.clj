@@ -1,4 +1,4 @@
-(defproject jena-clj "0.2.0"
+(defproject jena-clj "0.2.0-SNAPSHOT"
   :description "An idiomatic Clojure wrapper to the Jena API: fork from setzer22"
   :url "https://github.com/mark-watson/jena-clj"
   :repositories {"mvnrepository" {:url "https://mvnrepository.com/"}
@@ -10,8 +10,6 @@
                  [org.apache.jena/jena-arq "3.15.0"]
                  [org.apache.jena/jena-iri "3.15.0"]
                  [org.apache.jena/jena-tdb "3.15.0"]]
-  :deploy-repositories [["releases"  {:username "mark-watson" :sign-releases false :url "https://clojars.org/repo"}]
-                        ["snapshots" {:username "mark-watson" :sign-releases false :url "https://clojars.org/repo"}]]
   :main ^:skip-aot sparql.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
